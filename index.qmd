@@ -15,7 +15,7 @@ format:
 
 Documentation for Paged.js here: <https://pagedjs.org/>. It's not terribly helpful, unfortunately.
 
-In the yaml, we include all of the following in the header:  
+In the yaml, we add the following as text fields to `include-in-header`:  
 
 - `<script src="paged.polyfill.js"></script>`   
     This is the default source for Paged.js, which must be included in the header for any of this to work.  
