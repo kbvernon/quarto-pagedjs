@@ -1,0 +1,39 @@
+:root {
+  --viewer-pages-spacing: 12px;
+  --viewer-background-color: whitesmoke;
+  --viewer-shadow-color: #313131;
+}
+
+#controls {
+  display: none;
+}
+
+@media screen {
+
+  /* curious: if you don't include !important, it makes the page background this color */
+  body {
+    background-color: var(--viewer-background-color) !important;
+  }
+
+  .pagedjs_pages {
+    max-width: var(--pagedjs-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform-origin: 0 0;
+    margin: 0 auto;
+  }
+
+  /* even more curious: margins dont overlap here, specify separate margin for first page */
+  .pagedjs_page {
+    background-color: #fdfdfd;
+    margin: calc(var(--viewer-pages-spacing) / 2) calc(var(--viewer-pages-spacing) / 3);
+    flex: none;
+    box-shadow: 0 0 7px 1px var(--viewer-shadow-color);
+  }
+
+  .pagedjs_first_page {
+    margin: var(--viewer-pages-spacing) calc(var(--viewer-pages-spacing) / 3);
+  }
+
+}

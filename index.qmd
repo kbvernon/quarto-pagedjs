@@ -1,0 +1,38 @@
+---
+title: "Paged.js"
+format: 
+  html:
+    include-in-header: 
+      - text: |
+          <script src="paged.polyfill.js"></script>
+      - text: |
+          <link rel="stylesheet" type="text/css" href="print.css">
+      - text: |
+          <link rel="stylesheet" type="text/css" href="preview.css" media="screen">
+    page-layout: custom
+    embed-resources: true
+---
+
+Documentation for Paged.js here: <https://pagedjs.org/>. It's not terribly helpful, unfortunately.
+
+In the yaml, we include all of the following in the header:  
+
+- `<script src="paged.polyfill.js"></script>`   
+    This is the default source for Paged.js, which must be included in the header for any of this to work.  
+- `<link rel="stylesheet" type="text/css" href="print.css">`  
+    Paged.js uses this to control what happens to the layout when you click "Print" in your browser.  
+- `<link rel="stylesheet" type="text/css" href="preview.css" media="screen">`  
+    Gives the content a paged look when viewed in your browser. Note the `media="screen"` attribute! It's required!  
+
+```{r}
+#| results: asis
+#| message: false
+
+if (!require(pak)) install.packages("pak")
+if (!require(lorem)) pak::pak("gadenbuie/lorem")
+
+lorem::ipsum(paragraphs = 7) |> 
+  paste0(collapse = "\n\n") |> 
+  cat()
+
+```

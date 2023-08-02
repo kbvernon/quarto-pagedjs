@@ -1,0 +1,18 @@
+
+:root{
+  --pagedjs-margin: 1in;
+  --root-font-size: 12pt;
+}
+
+@page{
+  size: letter portrait;
+  margin: var(--pagedjs-margin);
+  font-size: var(--root-font-size);
+
+  @bottom-center{
+    content: counter(page);
+    font-weight: 400;
+    font-family: serif;
+  }
+
+}
